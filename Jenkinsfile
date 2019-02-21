@@ -14,5 +14,10 @@ pipeline {
         archiveArtifacts '**/*.war'
       }
     }
+    stage('deploy') {
+      steps {
+        build 'deploy-to-tomcat'
+      }
+    }
   }
 }
