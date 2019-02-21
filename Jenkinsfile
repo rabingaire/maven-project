@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'echo "Hello World"'
+        sh 'clean package'
       }
     }
-    stage('final') {
+    stage('archive') {
       steps {
-        sh 'echo "Final"'
+        archiveArtifacts '**/*.war'
       }
     }
   }
